@@ -1,5 +1,5 @@
 # 🛡️ LIBRO DE CIBERSEGURIDAD
-> Guía completa: tu arsenal, las herramientas del mundo, cómo atacan los criminales y cómo defenderte y rastrearlos de vuelta.
+> Guía completa: el arsenal esencial, las herramientas del mundo, cómo atacan los criminales y cómo defenderte y rastrearlos de vuelta.
 > Versión 2.0 — De cero a profesional. El libro maestro de la academia.
 
 ---
@@ -47,9 +47,9 @@ Si rompes **cualquier eslabón** de esta cadena, el ataque falla. Por eso defend
 
 ---
 
-# 🗡️ PARTE 1 — TU ARSENAL (las herramientas que YA tienes)
+# 🗡️ PARTE 1 — EL ARSENAL ESENCIAL
 
-Aquí va, una por una, cada herramienta instalada en tu PC: qué es, para qué sirve, qué te enseña y un ejemplo de uso. Organizadas por la fase del ataque/defensa donde se usan.
+Aquí va, una por una, cada herramienta esencial del oficio: qué es, para qué sirve, qué te enseña y un ejemplo de uso. Organizadas por la fase del ataque/defensa donde se usan.
 
 ---
 
@@ -72,7 +72,7 @@ El reconocimiento es la **primera fase de todo**. Sin información, no hay ataqu
 - **Truco ofensivo:** los registros DNS revelan subdominios, proveedores de correo y a veces servidores internos mal configurados.
 
 ### `theHarvester`
-- **Qué es:** recolector automático de OSINT (vía distrobox Kali/Parrot).
+- **Qué es:** recolector automático de OSINT (en Kali/Parrot).
 - **Para qué sirve:** junta emails, subdominios, nombres de empleados e IPs de un objetivo desde buscadores y fuentes públicas.
 - **Qué enseña:** cuánta "superficie" expone una empresa sin darse cuenta.
 - **Ejemplo:** `theHarvester -d ejemplo.com -b all`
@@ -107,7 +107,7 @@ El reconocimiento es la **primera fase de todo**. Sin información, no hay ataqu
 - **El NSE (Nmap Scripting Engine):** nmap trae cientos de scripts (`/usr/share/nmap/scripts/`) que detectan desde vulnerabilidades hasta credenciales por defecto. Esto solo ya es un curso entero.
 
 ### `RedTiger-Tools`
-- **Qué es:** suite OSINT que tienes en `~/RedTiger-Tools/`.
+- **Qué es:** suite OSINT de reconocimiento (RedTiger-Tools, en GitHub).
 - **Para qué sirve:** múltiples módulos de reconocimiento de personas, IPs y redes en una sola interfaz.
 
 ---
@@ -152,7 +152,7 @@ El reconocimiento es la **primera fase de todo**. Sin información, no hay ataqu
 - **Practica SOLO en:** Metasploitable, DVWA, o máquinas de HackTheBox/TryHackMe.
 
 ### `searchsploit` + ExploitDB
-- **Qué es:** buscador offline de exploits públicos (de exploit-db.com). Lo tienes vía distrobox.
+- **Qué es:** buscador offline de exploits públicos (de exploit-db.com). Disponible en Kali.
 - **Para qué sirve:** dado un software y versión, encontrar si ya existe un exploit público.
 - **Ejemplo:** `searchsploit apache 2.4` · `searchsploit -m 12345` (copia el exploit).
 - **Qué enseña:** que el software viejo y sin parchear es oro para un atacante. **Actualizar es defensa.**
@@ -209,7 +209,7 @@ Los sistemas no guardan tu contraseña en texto, guardan un **hash** (una huella
 - **Inicio:** `/opt/ghidra/ghidraRun`
 
 ### `binwalk`
-- **Qué es:** analiza archivos binarios y firmware buscando archivos ocultos dentro (vía distrobox).
+- **Qué es:** analiza archivos binarios y firmware buscando archivos ocultos dentro (en Kali).
 - **Para qué sirve:** extraer el contenido de imágenes de firmware de routers/IoT, encontrar archivos escondidos dentro de otros.
 - **Ejemplo:** `binwalk -e firmware.bin`
 - **Qué enseña:** análisis de dispositivos IoT y esteganografía.
@@ -251,7 +251,7 @@ Estas ya son herramientas **defensivas** — las usas para proteger y revisar TU
 - **Qué enseña:** forense digital avanzado. Cuando un sistema es hackeado, la RAM tiene las respuestas.
 
 ### `suricata`
-- **Qué es:** un **IDS/IPS** (Sistema de Detección/Prevención de Intrusiones) de alto rendimiento. ¡Ya lo tienes instalado!
+- **Qué es:** un **IDS/IPS** (Sistema de Detección/Prevención de Intrusiones) de alto rendimiento.
 - **Para qué sirve:** vigila el tráfico de tu red en tiempo real y **alerta (o bloquea)** cuando ve algo malicioso — un escaneo, un exploit conocido, tráfico a un servidor C2.
 - **Ejemplo:** `sudo suricata -i wlan0` (monitorea una interfaz).
 - **Qué enseña:** detección de intrusiones en red, el corazón del Blue Team. Esta es la herramienta que te avisaría si alguien te ataca.
@@ -293,13 +293,10 @@ Estas ya son herramientas **defensivas** — las usas para proteger y revisar TU
 
 # 🌍 PARTE 2 — HERRAMIENTAS QUE NO TIENES (pero debes conocer)
 
-Estas completan tu mapa mental de la profesión. **Algunas que estaban aquí ya las instalaste en tu host** (ver actualización abajo); el resto vive en tus distroboxes o las instalas cuando las necesites.
-
-> ### ✅ ACTUALIZACIÓN — Ya instaladas en tu PC
-> Estas 13 ya están en tu host y listas para usar: **Wireshark** (`wireshark`/`tshark`), **Burp Suite Community** (`burp`), **OWASP ZAP** (menú de apps), **masscan**, **gobuster**, **ffuf**, **feroxbuster**, **nuclei**, **netexec** (`nxc`), **steghide**, **fail2ban**, **chkrootkit**. Búscalas más abajo para ver para qué sirve cada una.
+Estas completan tu mapa mental de la profesión. La mayoría vive en distros de seguridad (Kali, Parrot, BlackArch) o las instalas cuando las necesites.
 
 ## Reconocimiento y escaneo
-- **`masscan`** — escáner de puertos ultrarrápido: escanea TODO internet en minutos. Donde nmap es un bisturí, masscan es una metralleta. *(Lo tienes en BlackArch.)*
+- **`masscan`** — escáner de puertos ultrarrápido: escanea TODO internet en minutos. Donde nmap es un bisturí, masscan es una metralleta. *(en BlackArch.)*
 - **`gobuster` / `ffuf` / `feroxbuster`** — fuerza bruta de directorios y archivos ocultos en webs (`/admin`, `/backup`, etc.). Indispensables en pentesting web. *(En BlackArch.)*
 - **`nuclei`** — escáner de vulnerabilidades moderno basado en plantillas de la comunidad. El estándar actual. *(En BlackArch.)*
 - **`amass` / `subfinder`** — enumeración masiva de subdominios. *(En BlackArch.)*
@@ -324,7 +321,7 @@ Estas completan tu mapa mental de la profesión. **Algunas que estaban aquí ya 
 
 ## Forense y respuesta
 - **`Autopsy`** — interfaz gráfica para forense de discos. Recupera archivos borrados, analiza líneas de tiempo.
-- **`Wazuh`** — plataforma SIEM/XDR open source: junta logs de muchas máquinas, detecta amenazas y alerta. *(En tu lista de pendientes para el mini PC.)*
+- **`Wazuh`** — plataforma SIEM/XDR open source: junta logs de muchas máquinas, detecta amenazas y alerta.
 - **`Velociraptor`** — caza de amenazas y respuesta a incidentes en endpoints.
 
 ## Esteganografía y CTF
@@ -366,7 +363,7 @@ Una vez que el malware está dentro, necesita "llamar a casa" para recibir órde
 - **Domain fronting / DNS tunneling:** esconde el tráfico de control dentro de tráfico que parece normal (consultas DNS, peticiones HTTPS a sitios famosos).
 - **Beaconing:** el malware "llama a casa" cada X tiempo de forma intermitente para no levantar sospechas.
 
-**Cómo se detecta:** tráfico periódico y regular a una IP/dominio raro. Aquí brilla **Suricata** (tu IDS) y el análisis de logs.
+**Cómo se detecta:** tráfico periódico y regular a una IP/dominio raro. Aquí brilla **Suricata** (un IDS) y el análisis de logs.
 
 ## 3.4 — Lo que hace el atacante una vez dentro
 1. **Escalada de privilegios:** de usuario normal a administrador/root (aprovechando bugs o malas configuraciones).
@@ -420,7 +417,7 @@ Para ver la mente de los atacantes **reales** (grupos de ransomware, APTs, estaf
 - **Mandiant, CrowdStrike, Cisco Talos, Unit 42 (Palo Alto)** — sus blogs analizan grupos criminales reales.
 - **Krebs on Security** (krebsonsecurity.com) — un periodista que investiga el cibercrimen por dentro.
 - **MITRE ATT&CK** — cataloga las técnicas exactas de cada grupo criminal conocido.
-- **Malware Bazaar / abuse.ch** — muestras reales de malware para estudiar (con MUCHO cuidado, en máquina aislada como tu REMnux).
+- **Malware Bazaar / abuse.ch** — muestras reales de malware para estudiar (con MUCHO cuidado, en máquina aislada como REMnux).
 
 ### ⚠️ Los foros criminales reales — por qué NO debes entrar
 Existen foros y mercados (en la web normal y en la dark web) donde se vende malware, datos robados, accesos hackeados y exploits. **Sé que da curiosidad. No entres. Esto es en serio:**
@@ -448,8 +445,8 @@ Los profesionales siguen **6 fases**. Memorízalas:
 5. **Recuperación:** restaurar desde backups limpios, devolver los sistemas a producción, vigilando que no vuelva.
 6. **Lecciones aprendidas:** ¿cómo entró? ¿cómo evitarlo? Documentar todo. Es la fase que la gente se salta y por la que los vuelven a hackear.
 
-## 4.2 — Tu kit de respuesta con las tools que YA tienes
-Si sospechas que tu máquina fue comprometida, este es tu flujo con tu arsenal:
+## 4.2 — Tu kit de respuesta
+Si sospechas que tu máquina fue comprometida, este es el flujo:
 
 ```bash
 # 1. ¿Conexiones de red sospechosas activas? (¿C2?)
@@ -487,9 +484,9 @@ sudo grep -i "failed\|invalid" /var/log/auth.log   # logins fallidos
 
 ## 4.4 — Defensas que debes montar
 - **`fail2ban`** — bloquea automáticamente IPs que fallan muchos logins (anti-fuerza bruta). **Instálalo ya**, es de lo más útil.
-- **Firewall** — `firewalld` (que ya usas con QuimichNet) o `ufw`. Cierra todo lo que no necesites.
-- **`suricata`** (ya lo tienes) — tu IDS de red.
-- **`Wazuh`** (pendiente, para el mini PC) — tu SIEM central que junta y correlaciona todo.
+- **Firewall** — `firewalld` o `ufw`. Cierra todo lo que no necesites.
+- **`suricata`** — tu IDS de red.
+- **`Wazuh`** — un SIEM central que junta y correlaciona todo.
 - **2FA en todo** — la defensa más rentable contra robo de credenciales.
 - **Backups 3-2-1** — 3 copias, 2 medios distintos, 1 fuera de sitio. La ÚNICA defensa real contra ransomware.
 
@@ -544,7 +541,7 @@ Si dejaron malware o scripts, ahí hay pistas de oro:
 - Busca los **IOCs (Indicadores de Compromiso)**: IPs, dominios, hashes de archivos. Búscalos en VirusTotal y bases de threat intel — quizás ya están ligados a un grupo conocido.
 
 ## 5.4 — Paso 4: Cuenta la historia (correlación)
-Junta todo: IP + geolocalización + horario del ataque + tipo de malware + idioma + objetivos. Con eso construyes un **perfil del atacante**. Esto es exactamente lo que hace tu **OBSIDIAN** con su grafo de relaciones, su timeline y su correlación con IA. Tu propio framework está hecho para esto.
+Junta todo: IP + geolocalización + horario del ataque + tipo de malware + idioma + objetivos. Con eso construyes un **perfil del atacante**. Esto es exactamente lo que hace un framework OSINT con grafo de relaciones, timeline y correlación. Para eso están hechos.
 
 ## 5.5 — Honeypots: que el atacante venga a ti
 La técnica más elegante de atribución: poner una **trampa**.
@@ -563,7 +560,7 @@ La técnica más elegante de atribución: poner una **trampa**.
 
 # 🎓 CIERRE — Tu ruta de aprendizaje
 
-Tienes un lab que muchos profesionales envidiarían. Para sacarle jugo, este orden:
+Para construir tu camino en seguridad, sigue este orden:
 
 1. **Domina los fundamentos:** redes (TCP/IP, DNS, HTTP), Linux y un lenguaje (ya tienes Python). Sin esto, las herramientas son magia que no entiendes.
 2. **Practica en entornos legales y gratis:**
